@@ -10,10 +10,9 @@ hierarchical structure of jet phase space.
 
 ## Method
 1. **Event Generation** — Multi-particle QCD antenna events are generated using the SARGE 
-   algorithm in q-space (Lorentz-invariant phase space representation)
+   algorithm.
 2. **Forward Process** — Events are noised to varying levels T★ ∈ {T/10, 2T/10, ..., T} 
-   using Langevin dynamics with a physics-informed score function derived from the 
-   Lorentz-invariant phase space prior
+   using Langevin dynamics with a physics-informed score function.
 3. **Reverse Process** — The pre-trained PET score network denoises each noised sample 
    back to t=0, repeated across multiple stochastic runs per noise level
 4. **Susceptibility** — EFPs are computed on original and denoised samples; their 
