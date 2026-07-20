@@ -15,5 +15,5 @@ noise level — providing a probe of the underlying hierarchical structure of je
    using Langevin dynamics with a physics-informed score function.
 3. **Reverse Process** — The pre-trained PET score network denoises each noised sample 
    back to t=0, repeated across multiple stochastic runs per noise level
-4. **Eigenspectrum of the correlation matrix** — EFPs are computed on original and denoised
+4. **Susceptibility** — EFPs are computed on original and denoised
    samples; their correlations as a function of T★ probe the hierarchial structure of the jet data. 
