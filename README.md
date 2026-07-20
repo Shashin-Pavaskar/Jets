@@ -32,15 +32,3 @@ Trained SARGE checkpoints are from
 (Bogorad, Elsharkawy, Kahn, Larkoski & Levi), the code accompanying
 [arXiv:2604.02415](https://arxiv.org/abs/2604.02415). The same architecture was
 retrained here on Gaussian data as a control.
-
-## Setup
-
-...
-
-## Reproducing the results
-
-...
-
-## Citation
-
-...
