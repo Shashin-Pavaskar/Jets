@@ -7,6 +7,7 @@ forward noising process and then denoised using a pre-trained Langevin score net
 Energy Flow Polynomials (EFPs) computed on the clean and reconstructed samples are used to 
 measure correlations of the original data with the reconstructed samples as a function of the 
 noise level — providing a probe of the underlying hierarchical structure of jet phase space.
+Additionally, it also explores susceptibility-based diagnosis for single class of images as well as gaussian data.
 
 ## Method
 1. **Event Generation** — Multi-particle QCD antenna events are generated using the SARGE 
