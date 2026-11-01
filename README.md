@@ -1,34 +1,29 @@
 # Susceptibility Probes of Hierarchical Structure in Diffusion Models
 
-This project probes the hierarchical structure of QCD jets using score-based
-diffusion models. Multi-particle phase-space events generated via the SARGE
-algorithm are subjected to a forward noising process and then denoised using a
-pre-trained score network (PET) in q-space Langevin mode. Energy Flow
-Polynomials (EFPs) computed on the clean and reconstructed samples measure the
-correlation between original and reconstructed data as a function of noise
-level; the resulting susceptibility probes the hierarchical structure of jet
-phase space.
+This project investigates whether statistical-physics-inspired response measures can be used to probe learned structure in generative diffusion models. We study score-based diffusion models trained on QCD jet data, where the underlying data contain nontrivial hierarchical correlations, and examine how these correlations are lost and reconstructed across different noise scales.
 
-The same diagnostic is applied to two control domains: a single-class image
-dataset and synthetic Gaussian data, where the
-absence of hierarchy gives a null baseline.
+Multi-particle phase-space events generated with PYTHIA and SARGE are subjected to a forward noising process and then denoised using a pre-trained score network (PET) in q-space Langevin mode. Correlations between the original and reconstructed data are measured as a function of noise level and used to construct a susceptibility-like observable. For both PYTHIA and SARGE datasets, we observe a peak in this response as a function of noise scale.
+
+As a control, we apply the same diagnostic to synthetic Gaussian data, which lack the hierarchical structure of the jet datasets. The absence of a comparable response provides a null baseline for studying the relationship between susceptibility and structure in the underlying data.
+
+## Motivation
+
+In statistical physics, response functions and susceptibilities provide macroscopic probes of changes in the organization of complex systems. This project explores whether analogous quantities can be useful for understanding how generative neural networks learn and reconstruct structured data.
+
+The broader goal is to investigate statistical-physics-inspired diagnostics of learned structure and emergent behavior in machine-learning systems.
 
 ## Method
 
-1. **Event generation** — Multi-particle QCD antenna events generated with the
-   SARGE algorithm.
-2. **Forward process** — Events are noised to a range of levels
-   t ∈ {0.1, 0.2, ..., 1.0} (as a fraction of the full diffusion time).
-3. **Reverse process** — The pre-trained PET score network denoises each noised
-   sample back to t = 0, repeated over N stochastic runs per noise level.
-4. **Susceptibility** — EFPs are computed on the original and denoised samples.
-   Their correlation as a function of t defines the susceptibility χ(t), whose
-   structure reflects the hierarchy of the underlying data.
+1. **Event generation** — Multi-particle QCD events are generated using PYTHIA and the SARGE algorithm.
 
-## Data and checkpoints
+2. **Forward process** — Events are noised to a range of levels \(t \in \{0.1, 0.2, \ldots, 1.0\}\), expressed as fractions of the full diffusion time.
 
-Trained SARGE checkpoints are from
-[GenerativeModelsOnPhaseSpace](https://github.com/ibrahimEls/GenerativeModelsOnPhaseSpace)
-(Bogorad, Elsharkawy, Kahn, Larkoski & Levi), the code accompanying
-[arXiv:2604.02415](https://arxiv.org/abs/2604.02415). The same architecture was
-retrained here on Gaussian data as a control.
+3. **Reverse process** — A pre-trained PET score network denoises each noised sample back to \(t=0\), with multiple stochastic reverse trajectories generated at each noise level.
+
+4. **Susceptibility** — Correlations between the original and reconstructed samples are measured as a function of noise level. Their response across the diffusion trajectory defines a susceptibility-like observable \(\chi(t)\), which is used to investigate the hierarchical structure of the underlying data.
+
+## Data and Checkpoints
+
+The architecture used for training is based on [GenerativeModelsOnPhaseSpace](https://github.com/ibrahimEls/GenerativeModelsOnPhaseSpace) (Bogorad, Elsharkawy, Kahn, Larkoski & Levi), the code accompanying [arXiv:2604.02415](https://arxiv.org/abs/2604.02415).
+
+The same architecture was retrained on synthetic Gaussian data to provide a control dataset.
