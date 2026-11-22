@@ -16,7 +16,7 @@ The broader goal is to investigate statistical-physics-inspired diagnostics of l
 
 1. **Event generation** — Multi-particle QCD events are generated using PYTHIA and the SARGE algorithm.
 
-2. **Forward process** — Events are noised to a range of levels \(t \in \{0.1, 0.2, \ldots, 1.0\}\), expressed as fractions of the full diffusion time.
+2. **Forward process** — Events are noised to a range of levels in [0,1] , expressed as fractions of the full diffusion time.
 
 3. **Reverse process** — A pre-trained PET score network denoises each noised sample back to \(t=0\), with multiple stochastic reverse trajectories generated at each noise level.
 
