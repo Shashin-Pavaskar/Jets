@@ -28,4 +28,4 @@ The architecture used for training is based on [GenerativeModelsOnPhaseSpace](ht
 
 The same architecture was retrained on synthetic Gaussian data to provide a control dataset.
 
-Sections of the code in susceptibility_code and susceptibility_gaussian has been generated/improved using AI tools. All the generated logic has been reviewed.  
+Sections of the code in susceptibility_code and susceptibility_gaussian has been generated/improved using AI tools. All the generated logic have been reviewed.  
